@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Esports Tournament Pro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Share Tech Mono"', 'monospace'],
+              display: ['Teko', 'sans-serif'],
+            },
+            colors: {
+              gold: {
+                DEFAULT: '#d4af37', // Championship Gold
+                light: '#f3e5ab',
+                dark: '#aa8c2c',
+                dim: '#6b5d36'
+              },
+              pro: {
+                main: '#020617',    // Deep Navy/Black
+                card: '#0f172a',    // Slate 900
+                light: '#1e293b',   // Slate 800
+                border: '#334155',  // Slate 700
+                blue: '#3b82f6',    // Royal Blue
+                text: '#94a3b8'     // Slate 400
+              }
+            },
+            backgroundImage: {
+              'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+              'hex-pattern': "url(\"data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 0l10.392 6v12L12 24 1.608 18V6L12 0z' fill-opacity='0.02' fill='%23d4af37' fill-rule='evenodd'/%3E%3C/svg%3E\")"
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.6s ease-out forwards',
+              'slide-up': 'slideUp 0.6s ease-out forwards',
+              'glow': 'glow 3s ease-in-out infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(20px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              glow: {
+                '0%, 100%': { boxShadow: '0 0 10px rgba(212, 175, 55, 0.2)' },
+                '50%': { boxShadow: '0 0 25px rgba(212, 175, 55, 0.5)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #020617;
+        color: #f8fafc;
+        background-image: 
+          radial-gradient(circle at 50% 0%, #1e293b 0%, transparent 60%),
+          linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+        background-size: 100% 100%, 60px 60px, 60px 60px;
+        min-height: 100vh;
+      }
+      
+      /* Premium Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #020617; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #334155; 
+        border-radius: 4px;
+        border: 2px solid #020617;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #d4af37; 
+      }
+
+      /* Chamfered Corners */
+      .chamfer {
+        clip-path: polygon(
+          10px 0, 100% 0, 
+          100% calc(100% - 10px), calc(100% - 10px) 100%, 
+          0 100%, 0 10px
+        );
+      }
+      
+      .chamfer-sm {
+        clip-path: polygon(
+          5px 0, 100% 0, 
+          100% calc(100% - 5px), calc(100% - 5px) 100%, 
+          0 100%, 0 5px
+        );
+      }
+
+      /* Gold Text Gradient */
+      .text-gradient-gold {
+        background: linear-gradient(to bottom, #f3e5ab, #d4af37);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
